@@ -1,7 +1,3 @@
-*[English](README.md) ∙ [日本語](README-ja.md) ∙ [简体中文](README-zh-Hans.md) ∙ [繁體中文](README-zh-TW.md) | [العَرَبِيَّة‎](https://github.com/donnemartin/system-design-primer/issues/170) ∙ [বাংলা](https://github.com/donnemartin/system-design-primer/issues/220) ∙ [Português do Brasil](https://github.com/donnemartin/system-design-primer/issues/40) ∙ [Deutsch](https://github.com/donnemartin/system-design-primer/issues/186) ∙ [ελληνικά](https://github.com/donnemartin/system-design-primer/issues/130) ∙ [עברית](https://github.com/donnemartin/system-design-primer/issues/272) ∙ [Italiano](https://github.com/donnemartin/system-design-primer/issues/104) ∙ [한국어](https://github.com/donnemartin/system-design-primer/issues/102) ∙ [فارسی](https://github.com/donnemartin/system-design-primer/issues/110) ∙ [Polski](https://github.com/donnemartin/system-design-primer/issues/68) ∙ [русский язык](https://github.com/donnemartin/system-design-primer/issues/87) ∙ [Español](https://github.com/donnemartin/system-design-primer/issues/136) ∙ [ภาษาไทย](https://github.com/donnemartin/system-design-primer/issues/187) ∙ [Türkçe](https://github.com/donnemartin/system-design-primer/issues/39) ∙ [tiếng Việt](https://github.com/donnemartin/system-design-primer/issues/127) ∙ [Français](https://github.com/donnemartin/system-design-primer/issues/250) | [Add Translation](https://github.com/donnemartin/system-design-primer/issues/28)*
-
-**Help [translate](TRANSLATIONS.md) this guide!**
-
 # The System Design Primer
 
 <p align="center">
@@ -9,93 +5,195 @@
   <br/>
 </p>
 
+<br/><br/>
 ## Motivation
 
 > Learn how to design large-scale systems.
 >
 > Prep for the system design interview.
 
-### Learn how to design large-scale systems
 
-Learning how to design scalable systems will help you become a better engineer.
+<br/><br/>
+## Study guide
 
-System design is a broad topic.  There is a **vast amount of resources scattered throughout the web** on system design principles.
+> Suggested topics to review based on your interview timeline (short, medium, long).
 
-This repo is an **organized collection** of resources to help you learn how to build systems at scale.
+![Imgur](images/OfVllex.png)
 
-### Learn from the open source community
+**Q: For interviews, do I need to know everything here?**
 
-This is a continually updated, open source project.
+**A: No, you don't need to know everything here to prepare for the interview**.
 
-[Contributions](#contributing) are welcome!
+What you are asked in an interview depends on variables such as:
 
-### Prep for the system design interview
+* How much experience you have
+* What your technical background is
+* What positions you are interviewing for
+* Which companies you are interviewing with
+* Luck
 
-In addition to coding interviews, system design is a **required component** of the **technical interview process** at many tech companies.
+More experienced candidates are generally expected to know more about system design.  Architects or team leads might be expected to know more than individual contributors.  Top tech companies are likely to have one or more design interview rounds.
 
-**Practice common system design interview questions** and **compare** your results with **sample solutions**: discussions, code, and diagrams.
+Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
 
-Additional topics for interview prep:
+* **Short timeline** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
+* **Medium timeline** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
+* **Long timeline** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
 
-* [Study guide](#study-guide)
-* [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question)
-* [System design interview questions, **with solutions**](#system-design-interview-questions-with-solutions)
-* [Object-oriented design interview questions, **with solutions**](#object-oriented-design-interview-questions-with-solutions)
-* [Additional system design interview questions](#additional-system-design-interview-questions)
+| | Short | Medium | Long |
+|---|---|---|---|
+| Review [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
+| Work through [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | :+1: | :+1: | :+1: |
+| Read through the [System design topics](#index-of-system-design-topics) to get a broad understanding of how systems work | :+1: | :+1: | :+1: |
+| Read through a few articles in the [Company engineering blogs](#company-engineering-blogs) for the companies you are interviewing with | Some | Some | Many |
+| Read through a few [Real world architectures](#real-world-architectures) | Some | Some | Many |
+| Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
+| Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
 
-## Anki flashcards
+<br/><br/>
+## How to approach a system design interview question
 
-<p align="center">
-  <img src="images/zdCAkB3.png">
-  <br/>
-</p>
+> How to tackle a system design interview question.
 
-The provided [Anki flashcard decks](https://apps.ankiweb.net/) use spaced repetition to help you retain key system design concepts.
+The system design interview is an **open-ended conversation**.  You are expected to lead it.
 
-* [System design deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design.apkg)
-* [System design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/System%20Design%20Exercises.apkg)
-* [Object oriented design exercises deck](https://github.com/donnemartin/system-design-primer/tree/master/resources/flash_cards/OO%20Design.apkg)
+You can use the following steps to guide the discussion.  To help solidify this process, work through the [System design interview questions with solutions](#system-design-interview-questions-with-solutions) section using the following steps.
 
-Great for use while on-the-go.
+### Step 1: Outline use cases, constraints, and assumptions
 
-### Coding Resource: Interactive Coding Challenges
+Gather requirements and scope the problem.  Ask questions to clarify use cases and constraints.  Discuss assumptions.
 
-Looking for resources to help you prep for the [**Coding Interview**](https://github.com/donnemartin/interactive-coding-challenges)?
+* Who is going to use it?
+* How are they going to use it?
+* How many users are there?
+* What does the system do?
+* What are the inputs and outputs of the system?
+* How much data do we expect to handle?
+* How many requests per second do we expect?
+* What is the expected read to write ratio?
 
-<p align="center">
-  <img src="images/b4YtAEN.png">
-  <br/>
-</p>
+### Step 2: Create a high level design
 
-Check out the sister repo [**Interactive Coding Challenges**](https://github.com/donnemartin/interactive-coding-challenges), which contains an additional Anki deck:
+Outline a high level design with all important components.
 
-* [Coding deck](https://github.com/donnemartin/interactive-coding-challenges/tree/master/anki_cards/Coding.apkg)
+* Sketch the main components and connections
+* Justify your ideas
 
-## Contributing
+### Step 3: Design core components
 
-> Learn from the community.
+Dive into details for each core component.  For example, if you were asked to [design a url shortening service](solutions/system_design/pastebin/README.md), discuss:
 
-Feel free to submit pull requests to help:
+* Generating and storing a hash of the full url
+    * [MD5](solutions/system_design/pastebin/README.md) and [Base62](solutions/system_design/pastebin/README.md)
+    * Hash collisions
+    * SQL or NoSQL
+    * Database schema
+* Translating a hashed url to the full url
+    * Database lookup
+* API and object-oriented design
 
-* Fix errors
-* Improve sections
-* Add new sections
-* [Translate](https://github.com/donnemartin/system-design-primer/issues/28)
+### Step 4: Scale the design
 
-Content that needs some polishing is placed [under development](#under-development).
+Identify and address bottlenecks, given the constraints.  For example, do you need the following to address scalability issues?
 
-Review the [Contributing Guidelines](CONTRIBUTING.md).
+* Load balancer
+* Horizontal scaling
+* Caching
+* Database sharding
 
+Discuss potential solutions and trade-offs.  Everything is a trade-off.  Address bottlenecks using [principles of scalable system design](#index-of-system-design-topics).
+
+### Back-of-the-envelope calculations
+
+You might be asked to do some estimates by hand.  Refer to the [Appendix](#appendix) for the following resources:
+
+* [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
+* [Powers of two table](#powers-of-two-table)
+* [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
+
+### Source(s) and further reading
+
+Check out the following links to get a better idea of what to expect:
+
+* [How to ace a systems design interview](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
+* [The system design interview](http://www.hiredintech.com/system-design)
+* [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
+* [System design template](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
+
+<br/><br/>
+## System design interview questions with solutions
+
+> Common system design interview questions with sample discussions, code, and diagrams.
+>
+> Solutions linked to content in the `solutions/` folder.
+
+| Question | |
+|---|---|
+| Design Pastebin.com (or Bit.ly) | [Solution](solutions/system_design/pastebin/README.md) |
+| Design the Twitter timeline and search (or Facebook feed and search) | [Solution](solutions/system_design/twitter/README.md) |
+| Design a web crawler | [Solution](solutions/system_design/web_crawler/README.md) |
+| Design Mint.com | [Solution](solutions/system_design/mint/README.md) |
+| Design the data structures for a social network | [Solution](solutions/system_design/social_graph/README.md) |
+| Design a key-value store for a search engine | [Solution](solutions/system_design/query_cache/README.md) |
+| Design Amazon's sales ranking by category feature | [Solution](solutions/system_design/sales_rank/README.md) |
+| Design a system that scales to millions of users on AWS | [Solution](solutions/system_design/scaling_aws/README.md) |
+| Add a system design question | [Contribute](#contributing) |
+
+### Design Pastebin.com (or Bit.ly)
+
+[View exercise and solution](solutions/system_design/pastebin/README.md)
+
+![Imgur](images/4edXG0T.png)
+
+### Design the Twitter timeline and search (or Facebook feed and search)
+
+[View exercise and solution](solutions/system_design/twitter/README.md)
+
+![Imgur](images/jrUBAF7.png)
+
+### Design a web crawler
+
+[View exercise and solution](solutions/system_design/web_crawler/README.md)
+
+![Imgur](images/bWxPtQA.png)
+
+### Design Mint.com
+
+[View exercise and solution](solutions/system_design/mint/README.md)
+
+![Imgur](images/V5q57vU.png)
+
+### Design the data structures for a social network
+
+[View exercise and solution](solutions/system_design/social_graph/README.md)
+
+![Imgur](images/cdCv5g7.png)
+
+### Design a key-value store for a search engine
+
+[View exercise and solution](solutions/system_design/query_cache/README.md)
+
+![Imgur](images/4j99mhe.png)
+
+### Design Amazon's sales ranking by category feature
+
+[View exercise and solution](solutions/system_design/sales_rank/README.md)
+
+![Imgur](images/MzExP06.png)
+
+### Design a system that scales to millions of users on AWS
+
+[View exercise and solution](solutions/system_design/scaling_aws/README.md)
+
+![Imgur](images/jj3A5N8.png)
+
+
+<br/><br/>
 ## Index of system design topics
 
 > Summaries of various system design topics, including pros and cons.  **Everything is a trade-off**.
 >
 > Each section contains links to more in-depth resources.
-
-<p align="center">
-  <img src="images/jrUBAF7.png">
-  <br/>
-</p>
 
 * [System design topics: start here](#system-design-topics-start-here)
     * [Step 1: Review the scalability video lecture](#step-1-review-the-scalability-video-lecture)
@@ -178,196 +276,6 @@ Review the [Contributing Guidelines](CONTRIBUTING.md).
 * [Credits](#credits)
 * [Contact info](#contact-info)
 * [License](#license)
-
-## Study guide
-
-> Suggested topics to review based on your interview timeline (short, medium, long).
-
-![Imgur](images/OfVllex.png)
-
-**Q: For interviews, do I need to know everything here?**
-
-**A: No, you don't need to know everything here to prepare for the interview**.
-
-What you are asked in an interview depends on variables such as:
-
-* How much experience you have
-* What your technical background is
-* What positions you are interviewing for
-* Which companies you are interviewing with
-* Luck
-
-More experienced candidates are generally expected to know more about system design.  Architects or team leads might be expected to know more than individual contributors.  Top tech companies are likely to have one or more design interview rounds.
-
-Start broad and go deeper in a few areas.  It helps to know a little about various key system design topics.  Adjust the following guide based on your timeline, experience, what positions you are interviewing for, and which companies you are interviewing with.
-
-* **Short timeline** - Aim for **breadth** with system design topics.  Practice by solving **some** interview questions.
-* **Medium timeline** - Aim for **breadth** and **some depth** with system design topics.  Practice by solving **many** interview questions.
-* **Long timeline** - Aim for **breadth** and **more depth** with system design topics.  Practice by solving **most** interview questions.
-
-| | Short | Medium | Long |
-|---|---|---|---|
-| Read through the [System design topics](#index-of-system-design-topics) to get a broad understanding of how systems work | :+1: | :+1: | :+1: |
-| Read through a few articles in the [Company engineering blogs](#company-engineering-blogs) for the companies you are interviewing with | :+1: | :+1: | :+1: |
-| Read through a few [Real world architectures](#real-world-architectures) | :+1: | :+1: | :+1: |
-| Review [How to approach a system design interview question](#how-to-approach-a-system-design-interview-question) | :+1: | :+1: | :+1: |
-| Work through [System design interview questions with solutions](#system-design-interview-questions-with-solutions) | Some | Many | Most |
-| Work through [Object-oriented design interview questions with solutions](#object-oriented-design-interview-questions-with-solutions) | Some | Many | Most |
-| Review [Additional system design interview questions](#additional-system-design-interview-questions) | Some | Many | Most |
-
-## How to approach a system design interview question
-
-> How to tackle a system design interview question.
-
-The system design interview is an **open-ended conversation**.  You are expected to lead it.
-
-You can use the following steps to guide the discussion.  To help solidify this process, work through the [System design interview questions with solutions](#system-design-interview-questions-with-solutions) section using the following steps.
-
-### Step 1: Outline use cases, constraints, and assumptions
-
-Gather requirements and scope the problem.  Ask questions to clarify use cases and constraints.  Discuss assumptions.
-
-* Who is going to use it?
-* How are they going to use it?
-* How many users are there?
-* What does the system do?
-* What are the inputs and outputs of the system?
-* How much data do we expect to handle?
-* How many requests per second do we expect?
-* What is the expected read to write ratio?
-
-### Step 2: Create a high level design
-
-Outline a high level design with all important components.
-
-* Sketch the main components and connections
-* Justify your ideas
-
-### Step 3: Design core components
-
-Dive into details for each core component.  For example, if you were asked to [design a url shortening service](solutions/system_design/pastebin/README.md), discuss:
-
-* Generating and storing a hash of the full url
-    * [MD5](solutions/system_design/pastebin/README.md) and [Base62](solutions/system_design/pastebin/README.md)
-    * Hash collisions
-    * SQL or NoSQL
-    * Database schema
-* Translating a hashed url to the full url
-    * Database lookup
-* API and object-oriented design
-
-### Step 4: Scale the design
-
-Identify and address bottlenecks, given the constraints.  For example, do you need the following to address scalability issues?
-
-* Load balancer
-* Horizontal scaling
-* Caching
-* Database sharding
-
-Discuss potential solutions and trade-offs.  Everything is a trade-off.  Address bottlenecks using [principles of scalable system design](#index-of-system-design-topics).
-
-### Back-of-the-envelope calculations
-
-You might be asked to do some estimates by hand.  Refer to the [Appendix](#appendix) for the following resources:
-
-* [Use back of the envelope calculations](http://highscalability.com/blog/2011/1/26/google-pro-tip-use-back-of-the-envelope-calculations-to-choo.html)
-* [Powers of two table](#powers-of-two-table)
-* [Latency numbers every programmer should know](#latency-numbers-every-programmer-should-know)
-
-### Source(s) and further reading
-
-Check out the following links to get a better idea of what to expect:
-
-* [How to ace a systems design interview](https://www.palantir.com/2011/10/how-to-rock-a-systems-design-interview/)
-* [The system design interview](http://www.hiredintech.com/system-design)
-* [Intro to Architecture and Systems Design Interviews](https://www.youtube.com/watch?v=ZgdS0EUmn70)
-* [System design template](https://leetcode.com/discuss/career/229177/My-System-Design-Template)
-
-## System design interview questions with solutions
-
-> Common system design interview questions with sample discussions, code, and diagrams.
->
-> Solutions linked to content in the `solutions/` folder.
-
-| Question | |
-|---|---|
-| Design Pastebin.com (or Bit.ly) | [Solution](solutions/system_design/pastebin/README.md) |
-| Design the Twitter timeline and search (or Facebook feed and search) | [Solution](solutions/system_design/twitter/README.md) |
-| Design a web crawler | [Solution](solutions/system_design/web_crawler/README.md) |
-| Design Mint.com | [Solution](solutions/system_design/mint/README.md) |
-| Design the data structures for a social network | [Solution](solutions/system_design/social_graph/README.md) |
-| Design a key-value store for a search engine | [Solution](solutions/system_design/query_cache/README.md) |
-| Design Amazon's sales ranking by category feature | [Solution](solutions/system_design/sales_rank/README.md) |
-| Design a system that scales to millions of users on AWS | [Solution](solutions/system_design/scaling_aws/README.md) |
-| Add a system design question | [Contribute](#contributing) |
-
-### Design Pastebin.com (or Bit.ly)
-
-[View exercise and solution](solutions/system_design/pastebin/README.md)
-
-![Imgur](images/4edXG0T.png)
-
-### Design the Twitter timeline and search (or Facebook feed and search)
-
-[View exercise and solution](solutions/system_design/twitter/README.md)
-
-![Imgur](images/jrUBAF7.png)
-
-### Design a web crawler
-
-[View exercise and solution](solutions/system_design/web_crawler/README.md)
-
-![Imgur](images/bWxPtQA.png)
-
-### Design Mint.com
-
-[View exercise and solution](solutions/system_design/mint/README.md)
-
-![Imgur](images/V5q57vU.png)
-
-### Design the data structures for a social network
-
-[View exercise and solution](solutions/system_design/social_graph/README.md)
-
-![Imgur](images/cdCv5g7.png)
-
-### Design a key-value store for a search engine
-
-[View exercise and solution](solutions/system_design/query_cache/README.md)
-
-![Imgur](images/4j99mhe.png)
-
-### Design Amazon's sales ranking by category feature
-
-[View exercise and solution](solutions/system_design/sales_rank/README.md)
-
-![Imgur](images/MzExP06.png)
-
-### Design a system that scales to millions of users on AWS
-
-[View exercise and solution](solutions/system_design/scaling_aws/README.md)
-
-![Imgur](images/jj3A5N8.png)
-
-## Object-oriented design interview questions with solutions
-
-> Common object-oriented design interview questions with sample discussions, code, and diagrams.
->
-> Solutions linked to content in the `solutions/` folder.
-
->**Note: This section is under development**
-
-| Question | |
-|---|---|
-| Design a hash map | [Solution](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
-| Design a least recently used cache | [Solution](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
-| Design a call center | [Solution](solutions/object_oriented_design/call_center/call_center.ipynb)  |
-| Design a deck of cards | [Solution](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
-| Design a parking lot | [Solution](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
-| Design a chat server | [Solution](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
-| Design a circular array | [Contribute](#contributing)  |
-| Add an object-oriented design question | [Contribute](#contributing) |
 
 ## System design topics: start here
 
@@ -1645,7 +1553,8 @@ Handy metrics based on numbers above:
 * [Designs, lessons, and advice from building large distributed systems](http://www.cs.cornell.edu/projects/ladis2009/talks/dean-keynote-ladis2009.pdf)
 * [Software Engineering Advice from Building Large-Scale Distributed Systems](https://static.googleusercontent.com/media/research.google.com/en//people/jeff/stanford-295-talk.pdf)
 
-### Additional system design interview questions
+<br/><br/>
+## Additional system design interview questions
 
 > Common system design interview questions, with links to resources on how to solve each.
 
@@ -1676,7 +1585,8 @@ Handy metrics based on numbers above:
 | Design a Stock Exchange (like NASDAQ or Binance) | [Jane Street](https://youtu.be/b1e4t2k2KJY)<br/>[Golang Implementation](https://around25.com/blog/building-a-trading-engine-for-a-crypto-exchange/)<br/>[Go Implemenation](http://bhomnick.net/building-a-simple-limit-order-in-go/) |
 | Add a system design question | [Contribute](#contributing) |
 
-### Real world architectures
+<br/><br/>
+## Real world architectures
 
 > Articles on how real world systems are designed.
 
@@ -1796,6 +1706,26 @@ Looking to add a blog?  To avoid duplicating work, consider adding your company 
 
 * [kilimchoi/engineering-blogs](https://github.com/kilimchoi/engineering-blogs)
 
+## Object-oriented design interview questions with solutions
+
+> Common object-oriented design interview questions with sample discussions, code, and diagrams.
+>
+> Solutions linked to content in the `solutions/` folder.
+
+>**Note: This section is under development**
+
+| Question | |
+|---|---|
+| Design a hash map | [Solution](solutions/object_oriented_design/hash_table/hash_map.ipynb)  |
+| Design a least recently used cache | [Solution](solutions/object_oriented_design/lru_cache/lru_cache.ipynb)  |
+| Design a call center | [Solution](solutions/object_oriented_design/call_center/call_center.ipynb)  |
+| Design a deck of cards | [Solution](solutions/object_oriented_design/deck_of_cards/deck_of_cards.ipynb)  |
+| Design a parking lot | [Solution](solutions/object_oriented_design/parking_lot/parking_lot.ipynb)  |
+| Design a chat server | [Solution](solutions/object_oriented_design/online_chat/online_chat.ipynb)  |
+| Design a circular array | [Contribute](#contributing)  |
+| Add an object-oriented design question | [Contribute](#contributing) |
+
+<br/><br/>
 ## Under development
 
 Interested in adding a section or helping complete one in-progress?  [Contribute](#contributing)!
